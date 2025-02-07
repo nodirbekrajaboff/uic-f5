@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    const store = [
+      {
+        price: "100$",
+        name: "Product name",
+        createdAt: "12/02 2025"
+      },
+      {
+        price: "100$",
+        name: "Product name",
+        createdAt: "12/02 2025"
+      },
+      {
+        image:"asdasdsad",
+        price: "100$",
+        name: "Product name",
+        createdAt: "12/02 2025"
+      },
+      {
+        price: "100$",
+        name: "Product name",
+        createdAt: "12/02 2025"
+      },
+      {
+        price: "100$",
+        name: "Product name",
+        createdAt: "12/02 2025"
+      },
+    ];
+
+    store.forEach((el)=>{
+        document.getElementById("").innerHTML += `<img src="${el.image}" />`
+    })
+
+    // ARRAY LENGTH
+    let myArray1 = [1, 2, 3, 4, 5, 6, 7];
+    console.log("ARRAY LENGTH: ", myArray1.length);
+
+    // ARRAY TO STRING
+    let myArray2 = [1, 2, 3, 4, 5, 6, 7, {}];
+    console.log("DEFAULT ARRAY: ", myArray2);
+    console.log("ARRAY TO STRING: ", myArray2.toString());
+
+    // ARRAY AT
+    let myArray3 = [1, 2, 3, 4, 5, 6, 7];
+    console.log("ARRAY AT: ", myArray3.at(1));
+    console.log("ARRAY WITH []: ", myArray3[1]);
+
+    // ARRAY JOIN
+    let myArray4 = [1, 2, 3, 4, 5, 6, 7];
+    console.log("ARRAY JOIN: ", myArray4.join("-"));
+
+    // ARRAY POP
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    fruits.pop();
+    console.log("ARRAY POP: ", fruits);
+  </script>
+</html>
