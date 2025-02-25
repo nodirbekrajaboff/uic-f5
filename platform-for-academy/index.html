@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @utility container {
+        margin: 0 auto;
+        padding: 30px 40px;
+      }
+      @theme {
+        --font-inter: "Inter", serif;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-50 font-inter">
+    <div class="container">
+      <div
+        class="max-w-[388px] w-full bg-white shadow-[0_4px_10px_0_var(--color-slate-100)] p-5 rounded-2xl"
+      >
+        <h3 class="">O’quvchilar</h3>
+        <div class="flex flex-col gap-0.5 mt-5" id="div-collection">
+        
+          <div class="bg-slate-50 p-2.5 w-full rounded-lg flex items-center">
+            <div
+              class="rounded-full size-10 bg-gradient-to-t from-green-600 to-green-500 text-white text-2xl grid place-items-center"
+            >
+              <i data-feather="user" class="size-[18px]"></i>
+            </div>
+            <h4 class="ml-2.5">Alisher Qodirov</h4>
+            <i data-feather="check" class="text-green-500 size-[18px] ml-auto"></i>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    feather.replace();
+  </script>
+  <script src="./assets/js/main.js"></script>
+</html>

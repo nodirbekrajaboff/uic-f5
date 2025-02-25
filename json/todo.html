@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-100 h-screen flex flex-col items-center justify-center">
+    <h1 class="text-2xl font-bold mb-4">Todo List</h1>
+
+    <div class="bg-white p-6 rounded shadow-md w-full max-w-md">
+      <form id="todo-form" class="mb-4">
+        <input
+          type="text"
+          id="todo-input"
+          class="border p-2 w-full"
+          placeholder="Enter a new todo"
+        />
+        <button type="submit" class="bg-blue-500 text-white p-2 mt-2 w-full">
+          Add Todo
+        </button>
+      </form>
+      <ul id="todo-list" class="list-disc pl-5"></ul>
+    </div>
+  </body>
+  <script>
+    const todoForm = document.getElementById("todo-form");
+    const todoInput = document.getElementById("todo-input");
+    const todoList = document.getElementById("todo-list");
+
+    const loadTodos = () => {
+      const todos = JSON.parse(localStorage.getItem("todos")) || [];
+
+      todoList.innerHTML = "";
+
+      todos.forEach((todo, index) => {
+        const li = document.createElement("li");
+        li.textContent = todo;
+        // li.classList.add("mb-2");
+        li.className = "mb-2";
+        
+        li.addEventListener("click", () => {
+          todos.splice(index, 1);
+          localStorage.setItem("todos", JSON.stringify(todos));
+          loadTodos();
+        });
+        todoList.appendChild(li);
+      });
+    };
+
+    todoForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const newTodo = todoInput.value.trim();
+      if (newTodo) {
+        const todos = JSON.parse(localStorage.getItem("todos")) || [];
+        todos.push(newTodo);
+        localStorage.setItem("todos", JSON.stringify(todos));
+        todoInput.value = "";
+        loadTodos();
+      }
+    });
+
+    loadTodos();
+  </script>
+</html>

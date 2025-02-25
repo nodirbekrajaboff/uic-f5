@@ -1,0 +1,16 @@
+[
+  {
+    "model": "Mac",
+    "price": true
+  },
+  {
+    "model": "Mac",
+    "price": {
+      "a": {
+        "b": {
+          "d": [1, "", true, {}, []]
+        }
+      }
+    }
+  }
+]
