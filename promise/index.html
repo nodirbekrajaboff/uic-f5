@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    const myPromise = new Promise((result, reject) => {
+      const data = true;
+
+      setTimeout(() => {
+        if (data) {
+          result(data);
+        } else {
+          reject(data);
+        }
+      }, 2000);
+    });
+
+    myPromise
+      .then((data) => {
+        console.log("Natija xabari 1: ", data);
+
+        return "ASDASKDJASKD";
+      })
+      .then((data) => {
+        console.log("Natija xabari 3: ", data);
+        return;
+      })
+      .then((data) => {
+        console.log("Natija xabari 3222 oxiri: ", data);
+      })
+      .catch((error) => {
+        console.log("Xatolik xabari 1: ", error);
+      });
+  </script>
+</html>
