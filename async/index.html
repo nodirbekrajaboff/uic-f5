@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // let myPromise = new Promise((resolve, reject) => {
+    //   setTimeout(() => {
+    //     resolve("HI");
+    //   }, 2000);
+    // });
+
+    // myPromise
+    //   .then((data) => {
+    //     document.body.innerHTML = data;
+    //   })
+    //   .catch((error) => {
+    //     console.log("FIRST ERROR: ", error);
+    //   });
+
+    // async function funcName() {
+    //   try {
+
+    //     document.body.innerHTML = await new Promise((resolve, reject) => {
+    //       setTimeout(() => {
+    //         // resolve("Hi baby");
+    //       }, 5000);
+    //     });
+    //   } catch (error) {
+    //     console.log("MY ERROR: ", error);
+    //   }
+    // }
+
+    // funcName();
+
+    const myFunc = async (customTimeOut = 1000, message = "Custom Message") =>
+      new Promise((resolve) =>
+        setTimeout(() => {
+          //   console.log(message, customTimeOut);
+
+          resolve(message);
+        }, customTimeOut)
+      );
+
+    // async function allFunc() {
+    //   //   console.log("1: ", await myFunc(1500));
+    //   //   console.log("2: ", await myFunc(2000));
+    //   //   console.log("3: ", await myFunc(500));
+    //   //   console.log("4: ", await myFunc(4000));
+
+    //   //   let [e, r, q] = [1, 2, 3];
+    //   //   console.log(e);
+    //   //   console.log(r);
+    //   //   console.log(q);
+
+    //   const parallelResult = await Promise.all([
+    //     myFunc(1500),
+    //     myFunc(2000),
+    //     myFunc(500),
+    //     myFunc(4000),
+    //   ]);
+    //   parallelResult.forEach((res, index) =>
+    //     console.log(`${index + 1}: `, res)
+    //   );
+    // }
+
+    // allFunc();
+
+    async function allFunc() {
+      const results = await Promise.all([
+        myFunc(1500, "1"),
+        myFunc(2000, "2"),
+        myFunc(500, "3"),
+        myFunc(4000, "4"),
+      ]);
+
+      results.forEach((res, index) => console.log(`${index + 1}: `, res));
+    }
+
+    allFunc();
+  </script>
+</html>
