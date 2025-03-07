@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real time chat app</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-slate-950 h-screen overflow-hidden w-screen flex">
+    <aside class="bg-slate-900 w-72 h-screen flex-shrink-0">
+      <ul id="users-list"></ul>
+    </aside>
+    <main class="w-full">
+      <section class="h-screen w-full flex flex-col">
+        <div class="cotainer mx-auto size-full overflow-hidden">
+          <ul
+            id="msg-container"
+            class="flex justify-end h-full flex-col gap-2 w-full p-5 overflow-hidden overflow-y-auto"
+          ></ul>
+        </div>
+        <div class="cotainer w-full mx-auto flex gap-5 mt-auto p-5">
+          <input
+            id="msg-input"
+            type="text"
+            class="px-3 py-2 bg-slate-800 w-full text-white"
+            placeholder="Message"
+          />
+          <button
+            id="msg-btn"
+            class="bg-blue-500 cursor-pointer text-white px-3 py-2"
+          >
+            Send
+          </button>
+        </div>
+      </section>
+    </main>
+  </body>
+  <script src="./js/main.js"></script>
+</html>

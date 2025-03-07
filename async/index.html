@@ -39,7 +39,7 @@
     const myFunc = async (customTimeOut = 1000, message = "Custom Message") =>
       new Promise((resolve) =>
         setTimeout(() => {
-          //   console.log(message, customTimeOut);
+          console.log(message, customTimeOut);
 
           resolve(message);
         }, customTimeOut)
@@ -70,14 +70,27 @@
     // allFunc();
 
     async function allFunc() {
-      const results = await Promise.all([
-        myFunc(1500, "1"),
-        myFunc(2000, "2"),
-        myFunc(500, "3"),
-        myFunc(4000, "4"),
-      ]);
+      // const results = await Promise.all([
+      //   ]);
 
-      results.forEach((res, index) => console.log(`${index + 1}: `, res));
+      try {
+        console.log(
+          await new Promise((resolve) => setTimeout(() => resolve(1), 1000))
+        );
+        console.log(
+          await new Promise((resolve, rej) =>
+            setTimeout(() => rej("ERROR 2"), 1500)
+          )
+        );
+        console.log(
+          await new Promise((resolve) => setTimeout(() => resolve(3), 200))
+        );
+      } catch (er) {
+        console.log(er);
+      }
+      // console.log(results);
+
+      // results.forEach((res, index) => console.log(`${index + 1}: `, res));
     }
 
     allFunc();
