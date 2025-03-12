@@ -1,0 +1,16 @@
+{
+  "name": "node-project",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "telegraf": "^4.16.3"
+  }
+}
